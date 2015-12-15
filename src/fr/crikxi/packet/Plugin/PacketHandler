@@ -40,7 +40,7 @@ public class PacketHandler extends PlayerConnection {
 
 		if(idEntity == a){
 			 Player p = Bukkit.getPlayer(player);
-			 p.sendMessage("Tu interragis avec une entity");			
+			 p.sendMessage("Tu interragis avec un npc");			
 			 	
 		}
 
