@@ -1,4 +1,4 @@
-package fr.crikxi.packet;
+package fr.crikxi.packet.Plugin;
 
 
 import org.bukkit.Bukkit;
