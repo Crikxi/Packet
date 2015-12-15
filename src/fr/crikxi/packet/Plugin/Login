@@ -1,0 +1,23 @@
+package fr.crikxi.packet.Plugin;
+
+import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.ItemStack;
+
+
+public class onLoginEvent implements Listener{
+
+	
+	@EventHandler(priority=EventPriority.LOWEST)
+	public void onPlayerLoginEvent(PlayerJoinEvent e)
+	{
+	Player p = e.getPlayer();
+    ((CraftPlayer) p).getHandle().playerConnection =  new PacketHandler(((CraftPlayer) p).getHandle().server, ((CraftPlayer)p).getHandle().playerConnection.networkManager, ((CraftPlayer) p).getHandle());
+	}
+
+}
