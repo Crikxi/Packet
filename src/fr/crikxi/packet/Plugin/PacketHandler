@@ -15,7 +15,7 @@ import net.minecraft.server.v1_8_R3.PlayerConnection;
 public class PacketHandler extends PlayerConnection {
 
 
-	static public int idEntity = 0; // on récupère avec example.getEntityId()
+	static public int idEntity = 0; 
 	public UUID player;
 
 	public PacketHandler(MinecraftServer minecraftserver,NetworkManager networkmanager, EntityPlayer entityplayer) {
