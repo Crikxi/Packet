@@ -13,6 +13,16 @@ public class Main extends JavaPlugin{
 
 
 	public void onEnable(){
+	        
+		String uuid = config.getString("Pnj");
+		List<Entity> entities = Bukkit.getWorld("world").getEntities();
+	        for(Entity entity : entities){
+			if(uuid.equalsIgnoreCase(entity.getUniqueId().toString())){
+				
+			}
+		}
+		
+		
 		for(Player p : Bukkit.getOnlinePlayers()){
 			((CraftPlayer) p).getHandle().playerConnection =  new PacketHandler(((CraftPlayer) p).getHandle().server, ((CraftPlayer)p).getHandle().playerConnection.networkManager, ((CraftPlayer) p).getHandle());
 		}
