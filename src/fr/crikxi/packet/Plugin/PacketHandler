@@ -29,7 +29,6 @@ public class PacketHandler extends PlayerConnection {
 	public void a(PacketPlayInUseEntity packet){
 
 		Field field;
-		Integer a = -1;
 		try {
 			field = PacketPlayInUseEntity.class.getDeclaredField("a");
 			field.setAccessible(true);
