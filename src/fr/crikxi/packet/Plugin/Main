@@ -6,20 +6,6 @@ import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.minefight.villagerdefender.commands.Commande;
-import fr.minefight.villagerdefender.entity.CustomEntityList;
-import fr.minefight.villagerdefender.event.GuiConfigEvent;
-import fr.minefight.villagerdefender.event.InteractInLobby;
-import fr.minefight.villagerdefender.event.PlayerChooseTeam;
-import fr.minefight.villagerdefender.event.PlayerJoin;
-import fr.minefight.villagerdefender.event.PlayerQuit;
-import fr.minefight.villagerdefender.event.RegainHealth;
-import fr.minefight.villagerdefender.event.SetZone;
-import fr.minefight.villagerdefender.event.WeatherEvent;
-import fr.minefight.villagerdefender.manager.ConfigManager;
-import fr.minefight.villagerdefender.manager.GameManager;
-import fr.minefight.villagerdefender.manager.TeamManager;
-
 
 public class Main extends JavaPlugin{
 
