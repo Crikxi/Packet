@@ -19,7 +19,7 @@ public class Main extends JavaPlugin{
 		List<Entity> entities = Bukkit.getWorld("world").getEntities();
 	        for(Entity entity : entities){
 			if(uuid.equalsIgnoreCase(entity.getUniqueId().toString())){
-				PacketHandler.a = entity..getEntityId();
+				PacketHandler.a = entity.getEntityId();
 			}
 		}
 		
