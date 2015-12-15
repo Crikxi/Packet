@@ -1,0 +1,52 @@
+package fr.crikxi.packet.Plugin;
+
+import java.lang.reflect.Field;
+import java.util.UUID;
+
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+import net.minecraft.server.v1_8_R3.EntityPlayer;
+import net.minecraft.server.v1_8_R3.MinecraftServer;
+import net.minecraft.server.v1_8_R3.NetworkManager;
+import net.minecraft.server.v1_8_R3.PacketPlayInUseEntity;
+import net.minecraft.server.v1_8_R3.PlayerConnection;
+
+public class PacketHandler extends PlayerConnection {
+
+
+	static public int idEntity = 0; // on récupère avec example.getEntityId()
+	public UUID player;
+
+	public PacketHandler(MinecraftServer minecraftserver,NetworkManager networkmanager, EntityPlayer entityplayer) {
+		super(minecraftserver, networkmanager, entityplayer);
+		player = entityplayer.getUniqueID();
+	}
+
+
+
+	@Override
+	public void a(PacketPlayInUseEntity packet){
+
+		Field field;
+		Integer a = -1;
+		try {
+			field = PacketPlayInUseEntity.class.getDeclaredField("a");
+			field.setAccessible(true);
+			a = (Integer) field.get(packet);
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			e.printStackTrace();
+		}
+
+		if(idEntity == a){
+			/* action
+			 * Example :
+			 * Player p = Bukkit.getPlayer(player);
+			 * p.sendMessage("Fou de Fafa");			
+			 */	
+		}
+
+		super.a(packet);
+
+	}
+}
