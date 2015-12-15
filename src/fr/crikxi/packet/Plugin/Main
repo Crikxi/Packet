@@ -23,6 +23,7 @@ public class Main extends JavaPlugin{
 		}
 		
 		Bukkit.getServer().getPluginManager().registerEvents(new Login(), this);
+		
 		for(Player p : Bukkit.getOnlinePlayers()){
 			((CraftPlayer) p).getHandle().playerConnection =  new PacketHandler(((CraftPlayer) p).getHandle().server, ((CraftPlayer)p).getHandle().playerConnection.networkManager, ((CraftPlayer) p).getHandle());
 		}
