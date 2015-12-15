@@ -18,11 +18,11 @@ public class Main extends JavaPlugin{
 		List<Entity> entities = Bukkit.getWorld("world").getEntities();
 	        for(Entity entity : entities){
 			if(uuid.equalsIgnoreCase(entity.getUniqueId().toString())){
-				
+				PacketHandler.a = entity..getEntityId();
 			}
 		}
 		
-		
+		Bukkit.getServer().getPluginManager().registerEvents(new Login(), this);
 		for(Player p : Bukkit.getOnlinePlayers()){
 			((CraftPlayer) p).getHandle().playerConnection =  new PacketHandler(((CraftPlayer) p).getHandle().server, ((CraftPlayer)p).getHandle().playerConnection.networkManager, ((CraftPlayer) p).getHandle());
 		}
